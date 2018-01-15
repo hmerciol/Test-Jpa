@@ -4,11 +4,20 @@
 	<!-- redirection des logs vers la sortir Console Standard -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>[%thread] %-5level %msg%n</pattern>
+			<pattern>[%thread] %-5level %msg %n</pattern>
+		</encoder>
+	</appender>
+	<appender name="RES" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%green(%msg) %n</pattern>
 		</encoder>
 	</appender>
 
 	<!-- politique de log pour la console -->
+	<logger name="result" level="INFO">
+		<appender-ref ref="RES" />
+	</logger>
+	
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 	</root>

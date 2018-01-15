@@ -19,7 +19,7 @@ public class TestJpa {
 	/**
 	 * Logger pour l'application
 	 */
-	private static final Logger LOG = LoggerFactory.getLogger(TestJpa.class);
+	private static final Logger LOG = LoggerFactory.getLogger("result");
 
 	/**
 	 * Point d'entrée de l'application
