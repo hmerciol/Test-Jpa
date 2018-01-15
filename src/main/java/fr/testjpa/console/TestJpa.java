@@ -56,7 +56,8 @@ public class TestJpa {
 		int empruntId = 1; // id de l'emprunt
 		Emprunt emprunt1 = manager.find(Emprunt.class, empruntId);
 		LOG.info("Livres concernés par l'emprunt " + emprunt1.getId() + " du " + emprunt1.getDateDebut().toString()
-				+ " au " + emprunt1.getDateFin().toString() + " :");
+				+ " au " + emprunt1.getDateFin().toString() + " effectué par " + emprunt1.getIdClient().getPrenom()
+				+ " " + emprunt1.getIdClient().getNom() + " :");
 		for (Livre livre3 : emprunt1.getLivres()) {
 			LOG.info("\t Livre d'identifiant " + livre3.getId() + ", de titre " + livre3.getTitre() + " par "
 					+ livre3.getAuteur());
@@ -68,9 +69,10 @@ public class TestJpa {
 		LOG.info("Emprunts effectués par " + client1.getPrenom() + " " + client1.getNom() + " :");
 		for (Emprunt emprunt2 : client1.getEmprunts()) {
 			LOG.info("\t Emprunt n°" + emprunt2.getId() + " du " + emprunt2.getDateDebut().toString() + " au "
-					+ (emprunt2.getDateFin()==null ? "indéterminé" : emprunt2.getDateFin().toString()) + " concernant :");
+					+ (emprunt2.getDateFin() == null ? "indéterminé" : emprunt2.getDateFin().toString())
+					+ " concernant :");
 			for (Livre livre4 : emprunt2.getLivres()) {
-				LOG.info("\t\t Livre d'identifiant " + livre4.getId() + ", de titre " + livre4.getTitre() + " par "
+				LOG.info("\t\t Le livre d'identifiant " + livre4.getId() + ", de titre " + livre4.getTitre() + " par "
 						+ livre4.getAuteur());
 			}
 		}
