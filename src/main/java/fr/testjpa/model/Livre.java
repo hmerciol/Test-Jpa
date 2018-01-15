@@ -1,5 +1,6 @@
 package fr.testjpa.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -23,11 +24,13 @@ public class Livre {
 	/**
 	 * Titre du livre
 	 */
+	@Column(name = "TITRE")
 	private String titre;
 
 	/**
 	 * Auteur du livre
 	 */
+	@Column(name = "AUTEUR")
 	private String auteur;
 
 	public Integer getId() {

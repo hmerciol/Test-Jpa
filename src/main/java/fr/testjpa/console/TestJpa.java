@@ -46,7 +46,7 @@ public class TestJpa {
 				Livre.class);
 		LOG.info("livres trouvés pour le titre " + bookTitle+" :");
 		for (Livre livre2 : query1.getResultList()) {
-			LOG.info("livre de titre " + livre2.getTitre() + " par " + livre2.getAuteur());
+			LOG.info("livre d'identifiant "+livre2.getId()+", de titre " + livre2.getTitre() + " par " + livre2.getAuteur());
 		}
 
 		manager.close();
