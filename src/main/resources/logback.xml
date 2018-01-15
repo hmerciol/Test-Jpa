@@ -18,7 +18,7 @@
 		<appender-ref ref="RES" />
 	</logger>
 	
-	<root level="INFO">
+	<logger name="org.hibernate" level="INFO">
 		<appender-ref ref="STDOUT" />
-	</root>
+	</logger>
 </configuration>

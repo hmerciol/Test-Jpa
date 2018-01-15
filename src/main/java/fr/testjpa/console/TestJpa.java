@@ -34,7 +34,7 @@ public class TestJpa {
 		EntityManager manager = factory.createEntityManager();
 
 		// trouver un livre avec son id
-		int livreId = 3;
+		int livreId = 3; // id du livre
 		Livre livre1 = manager.find(Livre.class, livreId);
 		if (livre1 != null) {
 			LOG.info("livre d'identifiant " + livreId + " : " + livre1.getTitre() + " par " + livre1.getAuteur());
@@ -43,7 +43,7 @@ public class TestJpa {
 		}
 
 		// trouver un livre avec son titre
-		String bookTitle = "Germinal";
+		String bookTitle = "Germinal"; // titre du livre
 		TypedQuery<Livre> query1 = manager.createQuery("select l from Livre l where l.titre='" + bookTitle + "'",
 				Livre.class);
 		LOG.info("livres trouvés pour le titre " + bookTitle + " :");
@@ -53,7 +53,7 @@ public class TestJpa {
 		}
 
 		// trouver un emprunt et les livres associés
-		int empruntId = 1;
+		int empruntId = 1; // id de l'emprunt
 		Emprunt emprunt1 = manager.find(Emprunt.class, empruntId);
 		TypedQuery<Livre> query2 = manager
 				.createQuery("select l from Livre l join l.emprunts e where e.id=" + emprunt1.getId(), Livre.class);
@@ -65,7 +65,7 @@ public class TestJpa {
 		}
 
 		// trouver tous les emprunts d'un client
-		int clientId = 2;
+		int clientId = 2; // id du client
 		Client client1 = manager.find(Client.class, clientId);
 		TypedQuery<Emprunt> query3 = manager
 				.createQuery("select e from Emprunt e join e.client c where c.id=" + client1.getId(), Emprunt.class);
