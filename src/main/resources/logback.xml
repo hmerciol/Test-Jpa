@@ -12,10 +12,18 @@
 			<pattern>%green(%msg) %n</pattern>
 		</encoder>
 	</appender>
+	<appender name="ERR" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%red(%msg) %n</pattern>
+		</encoder>
+	</appender>
 
 	<!-- politiques de log -->
 	<logger name="result" level="INFO">
 		<appender-ref ref="RES" />
+	</logger>
+	<logger name="error" level="INFO">
+		<appender-ref ref="ERR" />
 	</logger>
 	
 	<logger name="org.hibernate" level="WARN">

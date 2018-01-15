@@ -19,9 +19,14 @@ import fr.testjpa.model.Livre;
 public class TestJpa {
 
 	/**
-	 * Logger pour l'application
+	 * Logger de sortie pour l'application
 	 */
 	private static final Logger LOG = LoggerFactory.getLogger("result");
+
+	/**
+	 * Logger d'erreur pour l'application
+	 */
+	private static final Logger ERR = LoggerFactory.getLogger("error");
 
 	/**
 	 * Point d'entrée de l'application
@@ -30,16 +35,18 @@ public class TestJpa {
 	 *            Paramètres
 	 */
 	public static void main(String[] args) {
+		// tp1
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("pu_essai");
 		EntityManager manager = factory.createEntityManager();
 
+		// tp2
 		// trouver un livre avec son id
 		int livreId = 3; // id du livre
 		Livre livre1 = manager.find(Livre.class, livreId);
 		if (livre1 != null) {
 			LOG.info("Livre d'identifiant " + livreId + " : " + livre1.getTitre() + " par " + livre1.getAuteur());
 		} else {
-			LOG.info("Livre non trouvé");
+			ERR.info("Livre non trouvé");
 		}
 
 		// trouver un livre avec son titre
@@ -52,6 +59,7 @@ public class TestJpa {
 					+ livre2.getAuteur());
 		}
 
+		// tp3
 		// trouver un emprunt et les livres associés
 		int empruntId = 1; // id de l'emprunt
 		Emprunt emprunt1 = manager.find(Emprunt.class, empruntId);
