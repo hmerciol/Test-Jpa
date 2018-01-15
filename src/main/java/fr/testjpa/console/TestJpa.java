@@ -63,12 +63,12 @@ public class TestJpa {
 		}
 
 		// trouver tous les emprunts d'un client
-		int clientId = 2; // id du client
+		int clientId = 1; // id du client
 		Client client1 = manager.find(Client.class, clientId);
 		LOG.info("Emprunts effectués par " + client1.getPrenom() + " " + client1.getNom() + " :");
 		for (Emprunt emprunt2 : client1.getEmprunts()) {
 			LOG.info("\t Emprunt n°" + emprunt2.getId() + " du " + emprunt2.getDateDebut().toString() + " au "
-					+ emprunt2.getDateFin().toString() + " concernant :");
+					+ (emprunt2.getDateFin()==null ? "indéterminé" : emprunt2.getDateFin().toString()) + " concernant :");
 			for (Livre livre4 : emprunt2.getLivres()) {
 				LOG.info("\t\t Livre d'identifiant " + livre4.getId() + ", de titre " + livre4.getTitre() + " par "
 						+ livre4.getAuteur());
