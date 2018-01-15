@@ -9,7 +9,7 @@
 			<property name="javax.persistence.jdbc.user" value="ud79zcfo02hunmen" />
 			<property name="javax.persistence.jdbc.password" value="2hvv51VuTuVljkkAlcV" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.show_sql" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>
