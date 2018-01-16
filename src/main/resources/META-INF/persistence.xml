@@ -15,13 +15,23 @@
 	
 	<persistence-unit name="tp_banque" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>fr.banque.jpa.Banque</class>
+		<class>fr.banque.jpa.Client</class>
+		<class>fr.banque.jpa.Compte</class>
+		<class>fr.banque.jpa.LivretA</class>
+		<class>fr.banque.jpa.AssuranceVie</class>
+		<class>fr.banque.jpa.Operation</class>
+		<class>fr.banque.jpa.Virement</class> 
 		<properties>
+			<property name="hibernate.archive.autodetection" value="" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://bobgufydm-mysql.services.clever-cloud.com:3306/bobgufydm" />
 			<property name="javax.persistence.jdbc.user" value="urucwijzohahebn1" />
 			<property name="javax.persistence.jdbc.password" value="OBiA6thwODEj8ri5ltV" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.show_sql" value="false" />
-			<property name="hibernate.hbm2ddl.auto" value="update"/>
 		</properties>
 	</persistence-unit>
 </persistence>
