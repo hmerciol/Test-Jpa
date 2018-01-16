@@ -4,7 +4,14 @@
 	
 	<persistence-unit name="pu_essai" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>fr.testjpa.model.Client</class>
+		<class>fr.testjpa.model.Emprunt</class>
+		<class>fr.testjpa.model.Livre</class>
 		<properties>
+			<property name="hibernate.archive.autodetection" value="" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://b5d1bxkai-mysql.services.clever-cloud.com:3306/b5d1bxkai" />
 			<property name="javax.persistence.jdbc.user" value="ud6rrwg4m0sp68xg" />
 			<property name="javax.persistence.jdbc.password" value="0UJSyf0u3m4c2GOLYlt" />

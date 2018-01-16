@@ -93,8 +93,11 @@ public class TestBanque {
 		compte1.addOperation(operation1);
 
 		transaction.commit();
+		manager.close();
 		// données de base remplies
 
+		// redémarage du manager entre chaque commit pour plus de sécurité
+		manager = factory.createEntityManager();
 		// des requètes et traitements peuvent être efectués ici (penser à encadrer dans
 		// une transaction)
 
