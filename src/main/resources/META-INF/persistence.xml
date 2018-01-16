@@ -5,9 +5,9 @@
 	<persistence-unit name="pu_essai" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://blxigdrpe-mysql.services.clever-cloud.com:3306/blxigdrpe" />
-			<property name="javax.persistence.jdbc.user" value="ud79zcfo02hunmen" />
-			<property name="javax.persistence.jdbc.password" value="2hvv51VuTuVljkkAlcV" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://b5d1bxkai-mysql.services.clever-cloud.com:3306/b5d1bxkai" />
+			<property name="javax.persistence.jdbc.user" value="ud6rrwg4m0sp68xg" />
+			<property name="javax.persistence.jdbc.password" value="0UJSyf0u3m4c2GOLYlt" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.show_sql" value="false" />
 		</properties>
@@ -31,7 +31,7 @@
 			<property name="javax.persistence.jdbc.user" value="urucwijzohahebn1" />
 			<property name="javax.persistence.jdbc.password" value="OBiA6thwODEj8ri5ltV" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.show_sql" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>
