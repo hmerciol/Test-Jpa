@@ -12,4 +12,16 @@
 			<property name="hibernate.show_sql" value="false" />
 		</properties>
 	</persistence-unit>
+	
+	<persistence-unit name="tp_banque" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://bobgufydm-mysql.services.clever-cloud.com:3306/bobgufydm" />
+			<property name="javax.persistence.jdbc.user" value="urucwijzohahebn1" />
+			<property name="javax.persistence.jdbc.password" value="OBiA6thwODEj8ri5ltV" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+		</properties>
+	</persistence-unit>
 </persistence>
