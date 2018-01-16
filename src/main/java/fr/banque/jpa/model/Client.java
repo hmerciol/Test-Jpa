@@ -61,7 +61,9 @@ public class Client {
 	 * Comptes du client
 	 */
 	@ManyToMany
-	@JoinTable(name = "client_compte_table", joinColumns = @JoinColumn(name = "id_client", referencedColumnName = "id_cl"), inverseJoinColumns = @JoinColumn(name = "id_compte", referencedColumnName = "id_co"))
+	@JoinTable(name = "client_compte_table", 
+		joinColumns = @JoinColumn(name = "id_client", referencedColumnName = "id_cl"), 
+		inverseJoinColumns = @JoinColumn(name = "id_compte", referencedColumnName = "id_co"))
 	private Set<Compte> comptes = new HashSet<>();
 
 	/**

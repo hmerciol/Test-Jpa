@@ -148,6 +148,16 @@ public class Compte {
 	}
 
 	/**
+	 * Ajoute un client au compte
+	 * 
+	 * @param client
+	 *            Le client à ajouter
+	 */
+	public void addClient(Client client) {
+		client.addCompte(this);
+	}
+
+	/**
 	 * Récupère les opérations sur le compte
 	 * 
 	 * @return Les opérations du compte
@@ -164,6 +174,16 @@ public class Compte {
 	 */
 	public void setOperations(Set<Operation> operations) {
 		this.operations = operations;
+	}
+
+	/**
+	 * Ajoute une opération au compte
+	 * 
+	 * @param operation
+	 *            L'opération à ajouter
+	 */
+	public void addOperation(Operation operation) {
+		operation.setCompte(this);
 	}
 
 }

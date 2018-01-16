@@ -2,12 +2,15 @@ package fr.banque.jpa.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+
 /**
  * Représente une assurance vie
  * 
  * @author hmerciol
  *
  */
+@Entity
 public class AssuranceVie extends Compte {
 
 	/**
@@ -27,6 +30,31 @@ public class AssuranceVie extends Compte {
 	 */
 	public LocalDate getDateFin() {
 		return dateFin;
+	}
+
+	/**
+	 * Constructeur par défaut
+	 */
+	public AssuranceVie() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec numéro, solde, date de fin et taux de l'assurance vie
+	 * 
+	 * @param numero
+	 *            Le numéro de l'assurance
+	 * @param solde
+	 *            Le solde de l'assurance
+	 * @param dateFin
+	 *            La date de fin de l'assurance
+	 * @param taux
+	 *            Le taux de l'assurance
+	 */
+	public AssuranceVie(String numero, double solde, LocalDate dateFin, double taux) {
+		super(numero, solde);
+		this.dateFin = dateFin;
+		this.taux = taux;
 	}
 
 	/**

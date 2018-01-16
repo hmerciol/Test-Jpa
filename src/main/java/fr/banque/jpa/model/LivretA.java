@@ -17,6 +17,28 @@ public class LivretA extends Compte {
 	private double taux;
 
 	/**
+	 * Constructeur par défaut
+	 */
+	public LivretA() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec numéro, solde et taux du livret
+	 * 
+	 * @param numero
+	 *            Le numéro du livret
+	 * @param solde
+	 *            Le solde du livret
+	 * @param taux
+	 *            Le taux du livret
+	 */
+	public LivretA(String numero, double solde, double taux) {
+		super(numero, solde);
+		this.taux = taux;
+	}
+
+	/**
 	 * Récupère le taux du livret A
 	 * 
 	 * @return Le taux du livret

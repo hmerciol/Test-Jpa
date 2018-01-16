@@ -50,6 +50,30 @@ public class Operation {
 	private Compte compte;
 
 	/**
+	 * Constructeur par défaut
+	 */
+	public Operation() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec la date, le montant et le motif de l'opération
+	 * 
+	 * @param date
+	 *            La date effective de l'opération
+	 * @param montant
+	 *            Le montant de l'opération
+	 * @param motif
+	 *            Le motif de l'opération
+	 */
+	public Operation(LocalDateTime date, double montant, String motif) {
+		super();
+		this.date = date;
+		this.montant = montant;
+		this.motif = motif;
+	}
+
+	/**
 	 * Récupère l'identifiant de l'opération
 	 * 
 	 * @return L'identifiant
