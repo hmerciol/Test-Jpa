@@ -19,7 +19,7 @@ public class Banque {
 	 * Identifiant de la banque
 	 */
 	@Id
-	private Integer id;
+	private Integer id_ba;
 
 	/**
 	 * Nom de la banque
@@ -33,12 +33,30 @@ public class Banque {
 	private Set<Client> clients;
 
 	/**
+	 * Constructeur par défaut
+	 */
+	public Banque() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec identifiant et nom de la banque
+	 * @param id L'identifiant de la banque
+	 * @param nom Le nom de la banque
+	 */
+	public Banque(Integer id, String nom) {
+		super();
+		this.id_ba = id;
+		this.nom = nom;
+	}
+
+	/**
 	 * Récupère l'identifiant
 	 * 
 	 * @return L'identifiant
 	 */
 	public Integer getId() {
-		return id;
+		return id_ba;
 	}
 
 	/**
@@ -48,7 +66,7 @@ public class Banque {
 	 *            Le nouvel identifiant
 	 */
 	public void setId(Integer id) {
-		this.id = id;
+		this.id_ba = id;
 	}
 
 	/**

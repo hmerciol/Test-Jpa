@@ -32,6 +32,28 @@ public class Adresse {
 	private String ville;
 
 	/**
+	 * Constructeur par défaut
+	 */
+	public Adresse() {
+		super();
+	}
+
+	/**
+	 * Constructeur complet
+	 * @param numero Le numéro de rue
+	 * @param rue Le nom de la rue
+	 * @param codePostal Le code postal
+	 * @param ville La ville
+	 */
+	public Adresse(int numero, String rue, int codePostal, String ville) {
+		super();
+		this.numero = numero;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+	}
+
+	/**
 	 * Récupère le numéro de rue
 	 * 
 	 * @return Le numéro de rue

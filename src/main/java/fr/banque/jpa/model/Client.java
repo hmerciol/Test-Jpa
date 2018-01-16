@@ -24,7 +24,7 @@ public class Client {
 	 * Identifiant du client
 	 */
 	@Id
-	private Integer id;
+	private Integer id_cl;
 
 	/**
 	 * Nom du client
@@ -59,9 +59,31 @@ public class Client {
 	 */
 	@ManyToMany
 	@JoinTable(name = "client_compte_table",
-			joinColumns = @JoinColumn(name = "id_client", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name = "id_compte", referencedColumnName = "id"))
+			joinColumns = @JoinColumn(name = "id_client", referencedColumnName = "id_cl"),
+			inverseJoinColumns = @JoinColumn(name = "id_compte", referencedColumnName = "id_co"))
 	private Set<Compte> comptes;
+
+	/**
+	 * Constructeur par défaut
+	 */
+	public Client() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec identifiant, nom, prénom et date de naissance
+	 * @param id L'identifiant du client
+	 * @param nom Le nom du client
+	 * @param prenom Le prénom du client
+	 * @param dateNaissance La date de naissance du client
+	 */
+	public Client(Integer id, String nom, String prenom, LocalDate dateNaissance) {
+		super();
+		this.id_cl = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+	}
 
 	/**
 	 * Récupère l'identifiant client
@@ -69,7 +91,7 @@ public class Client {
 	 * @return L'identifiant
 	 */
 	public Integer getId() {
-		return id;
+		return id_cl;
 	}
 
 	/**
@@ -79,7 +101,7 @@ public class Client {
 	 *            Le nouvel identifiant
 	 */
 	public void setId(Integer id) {
-		this.id = id;
+		this.id_cl = id;
 	}
 
 	/**

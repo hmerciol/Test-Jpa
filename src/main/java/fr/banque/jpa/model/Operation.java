@@ -23,7 +23,7 @@ public class Operation {
 	 * Identifiant de l'opération
 	 */
 	@Id
-	private Integer id;
+	private Integer id_op;
 
 	/**
 	 * Date de l'opération
@@ -44,7 +44,7 @@ public class Operation {
 	 * Compte associé à l'opération
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "id_co")
 	private Compte compte;
 
 	/**
@@ -53,7 +53,7 @@ public class Operation {
 	 * @return L'identifiant
 	 */
 	public Integer getId() {
-		return id;
+		return id_op;
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class Operation {
 	 *            Le nouvel identifiant
 	 */
 	public void setId(Integer id) {
-		this.id = id;
+		this.id_op = id;
 	}
 
 	/**

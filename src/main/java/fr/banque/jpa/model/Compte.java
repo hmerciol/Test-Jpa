@@ -23,7 +23,7 @@ public class Compte {
 	 * L'identifiant du compte
 	 */
 	@Id
-	private Integer id;
+	private Integer id_co;
 
 	/**
 	 * Numéro du compte
@@ -53,7 +53,7 @@ public class Compte {
 	 * @return L'identifiant du compte
 	 */
 	public Integer getId() {
-		return id;
+		return id_co;
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class Compte {
 	 *            Le nouvel identifiant
 	 */
 	public void setId(Integer id) {
-		this.id = id;
+		this.id_co = id;
 	}
 
 	/**

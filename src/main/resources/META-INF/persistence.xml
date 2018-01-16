@@ -15,13 +15,13 @@
 	
 	<persistence-unit name="tp_banque" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>fr.banque.jpa.Banque</class>
-		<class>fr.banque.jpa.Client</class>
-		<class>fr.banque.jpa.Compte</class>
-		<class>fr.banque.jpa.LivretA</class>
-		<class>fr.banque.jpa.AssuranceVie</class>
-		<class>fr.banque.jpa.Operation</class>
-		<class>fr.banque.jpa.Virement</class> 
+		<class>fr.banque.jpa.model.Banque</class>
+		<class>fr.banque.jpa.model.Client</class>
+		<class>fr.banque.jpa.model.Compte</class>
+		<class>fr.banque.jpa.model.LivretA</class>
+		<class>fr.banque.jpa.model.AssuranceVie</class>
+		<class>fr.banque.jpa.model.Operation</class>
+		<class>fr.banque.jpa.model.Virement</class> 
 		<properties>
 			<property name="hibernate.archive.autodetection" value="" />
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
@@ -31,7 +31,7 @@
 			<property name="javax.persistence.jdbc.user" value="urucwijzohahebn1" />
 			<property name="javax.persistence.jdbc.password" value="OBiA6thwODEj8ri5ltV" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>
