@@ -1,8 +1,10 @@
 package fr.banque.jpa.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -23,6 +25,7 @@ public class Compte {
 	 * L'identifiant du compte
 	 */
 	@Id
+	@GeneratedValue
 	private Integer id_co;
 
 	/**
@@ -39,13 +42,34 @@ public class Compte {
 	 * Les clients possesseurs du compte
 	 */
 	@ManyToMany(mappedBy = "comptes")
-	private Set<Client> clients;
+	private Set<Client> clients = new HashSet<>();
 
 	/**
 	 * Les opérations à effectuer sur le compte
 	 */
 	@OneToMany(mappedBy = "compte")
-	private Set<Operation> operations;
+	private Set<Operation> operations = new HashSet<>();
+
+	/**
+	 * Constructeur par défaut
+	 */
+	public Compte() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec numéro et solde du compte
+	 * 
+	 * @param numero
+	 *            Le numéro du compte
+	 * @param solde
+	 *            Le solde du compte
+	 */
+	public Compte(String numero, double solde) {
+		super();
+		this.numero = numero;
+		this.solde = solde;
+	}
 
 	/**
 	 * Récupère l'identifiant du compte

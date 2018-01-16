@@ -1,10 +1,12 @@
 package fr.banque.jpa.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -24,6 +26,7 @@ public class Client {
 	 * Identifiant du client
 	 */
 	@Id
+	@GeneratedValue
 	private Integer id_cl;
 
 	/**
@@ -58,10 +61,8 @@ public class Client {
 	 * Comptes du client
 	 */
 	@ManyToMany
-	@JoinTable(name = "client_compte_table",
-			joinColumns = @JoinColumn(name = "id_client", referencedColumnName = "id_cl"),
-			inverseJoinColumns = @JoinColumn(name = "id_compte", referencedColumnName = "id_co"))
-	private Set<Compte> comptes;
+	@JoinTable(name = "client_compte_table", joinColumns = @JoinColumn(name = "id_client", referencedColumnName = "id_cl"), inverseJoinColumns = @JoinColumn(name = "id_compte", referencedColumnName = "id_co"))
+	private Set<Compte> comptes = new HashSet<>();
 
 	/**
 	 * Constructeur par défaut
@@ -71,15 +72,17 @@ public class Client {
 	}
 
 	/**
-	 * Constructeur avec identifiant, nom, prénom et date de naissance
-	 * @param id L'identifiant du client
-	 * @param nom Le nom du client
-	 * @param prenom Le prénom du client
-	 * @param dateNaissance La date de naissance du client
+	 * Constructeur avec nom, prénom et date de naissance
+	 * 
+	 * @param nom
+	 *            Le nom du client
+	 * @param prenom
+	 *            Le prénom du client
+	 * @param dateNaissance
+	 *            La date de naissance du client
 	 */
-	public Client(Integer id, String nom, String prenom, LocalDate dateNaissance) {
+	public Client(String nom, String prenom, LocalDate dateNaissance) {
 		super();
-		this.id_cl = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
@@ -216,6 +219,16 @@ public class Client {
 	 */
 	public void setComptes(Set<Compte> comptes) {
 		this.comptes = comptes;
+	}
+
+	/**
+	 * Ajoute un compte au client
+	 * 
+	 * @param compte
+	 *            Le compte à ajouter
+	 */
+	public void addCompte(Compte compte) {
+		this.comptes.add(compte);
 	}
 
 }

@@ -3,6 +3,7 @@ package fr.banque.jpa.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -23,6 +24,7 @@ public class Operation {
 	 * Identifiant de l'opération
 	 */
 	@Id
+	@GeneratedValue
 	private Integer id_op;
 
 	/**

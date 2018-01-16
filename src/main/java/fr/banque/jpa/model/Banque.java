@@ -1,8 +1,10 @@
 package fr.banque.jpa.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -19,6 +21,7 @@ public class Banque {
 	 * Identifiant de la banque
 	 */
 	@Id
+	@GeneratedValue
 	private Integer id_ba;
 
 	/**
@@ -30,7 +33,7 @@ public class Banque {
 	 * Clients de la banque
 	 */
 	@OneToMany(mappedBy = "banque")
-	private Set<Client> clients;
+	private Set<Client> clients = new HashSet<>();
 
 	/**
 	 * Constructeur par défaut
@@ -40,13 +43,13 @@ public class Banque {
 	}
 
 	/**
-	 * Constructeur avec identifiant et nom de la banque
-	 * @param id L'identifiant de la banque
-	 * @param nom Le nom de la banque
+	 * Constructeur avec le nom de la banque
+	 * 
+	 * @param nom
+	 *            Le nom de la banque
 	 */
-	public Banque(Integer id, String nom) {
+	public Banque(String nom) {
 		super();
-		this.id_ba = id;
 		this.nom = nom;
 	}
 
@@ -105,6 +108,16 @@ public class Banque {
 	 */
 	public void setClients(Set<Client> clients) {
 		this.clients = clients;
+	}
+
+	/**
+	 * Ajoute un client à la banque
+	 * 
+	 * @param client
+	 *            Le nouveau client
+	 */
+	public void addClient(Client client) {
+		client.setBanque(this);
 	}
 
 }
